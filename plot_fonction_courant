@@ -1,0 +1,52 @@
+set border linecolor rgbcolor "yellow"
+set key textcolor rgbcolor "yellow"
+set title "Test Plot" textcolor rgbcolor "yellow"
+set obj 1 rectangle behind from screen 0,0 to screen 1,1
+set obj 1 fillstyle solid 1.0 fillcolor rgbcolor "black"
+
+
+
+ set datafile missing '?' 
+
+set pm3d map 
+set contour base
+set cntrparam #levels 120 #10
+set surface
+
+set style increment user
+do for [i=1:151] {
+set style line i lc rgb "black" lw .8  
+}
+
+ 
+ 
+ 
+
+set cntrparam bspline
+#unset interpolate 0,0 
+
+
+#set key on outside  t #rm 
+unset key  
+#unset colorbox
+set colorbox
+#unset contour
+#unset surface 	
+#set palette rgbformulae 33,13,10
+set palette rgbformulae 23,28,3
+ 
+set size ratio 1.
+ 
+
+
+
+
+set cntrparam levels discrete 0.0008,  0.0007, 0.0006, 0.0005, 0.0004, 0.0003, 0.0002 , 0.00015,  0.0001 , 0.00008, 0.00006, 0.00004, 0.00003, 0.00002, 0.000015, 0.00001, 0.000008, 0.000006, 0,  \
+    	     -0.0006, -0.0005, -0.0004, -0.0003, -0.0002 , -0.00015,  -0.0001 , -0.00008, -0.00006, -0.00004,-0.00003, -0.00002, -0.000015, -0.00001, -0.000008, -0.000006
+
+# 0.003, 0.0015, 0.001, 0.0005,0.00025,0.0001,0.00005,0.00001,0.000001,0.0, \
+#      		       		   -0.00001, -0.0001,-0.001,-0.01,-0.02,-0.03,-0.05,-0.07,-0.09,-0.1,-0.11, -0.1150, -0.1175
+
+
+set title 'Pi'
+splot "champ_vorticite" using 1:2:3 lc 'black'

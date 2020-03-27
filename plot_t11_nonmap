@@ -1,0 +1,25 @@
+set datafile missing '?' 
+
+  
+ 
+
+set style increment user
+do for [i=1:51] {
+set style line i lc rgb "black" lw .8  
+}
+
+ 
+
+ 
+ 
+set pm3d 
+ 
+set hidden3d
+unset key
+ 
+ 
+set ticslevel 0
+
+set palette rgbformulae 23,28, 3  
+set title 't_11'
+splot "champs_UT" using 1:2:5  lc 'black'

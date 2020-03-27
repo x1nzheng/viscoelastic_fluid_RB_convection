@@ -1,0 +1,41 @@
+reset
+set terminal pdf
+ set output '/home/fhagani/DATA/ns_2D_3D_new_grid/CODE_16/CODE_NS_VISCOELASTIC_7/CODE_14/anim_ptt/champs_sur_plan_t22_23.pdf'
+set border linecolor rgbcolor "yellow"
+set key textcolor rgbcolor "yellow"
+set title "Test Plot" textcolor rgbcolor "yellow"
+set obj 1 rectangle behind from screen 0,0 to screen 1,1
+set obj 1 fillstyle solid 1.0 fillcolor rgbcolor "black"
+
+
+
+ set datafile missing '?' 
+
+ set pm3d # map 
+ set surface
+ set view 60, 70, 1, 1
+ 
+unset key  
+#set colorbox
+ 
+set palette rgbformulae 23,28,3
+ 
+set size ratio 1.0 
+
+set style fill transparent solid 0.65
+
+#set zrange[-6.:6.]
+
+set title 'tau_22' 
+set xlabel "x_3" tc ls 2
+set ylabel "x_2	" tc ls 2
+set zlabel "tau_22" tc ls 2
+
+#splot "solution_Poiseuille_2D" using 1:2:2 with lines lc 'black' # with pm3d
+splot "champs_UT_x2x3_1_2" using 1:2:9 with lines lc 'black' 
+
+
+
+
+set output 
+exit  

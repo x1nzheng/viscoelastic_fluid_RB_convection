@@ -1,0 +1,5 @@
+set xrange [0.25:0.46]
+plot 'prof_visco_x2eps0.025' u 16:15 w l
+replot 'prof_visco_x2eps0.1' u 16:15 w l
+replot 'prof_visco_x2eps0.4' u 16:15 w l
+replot 'prof_visco_x2eps2.5' u 16:15 w l

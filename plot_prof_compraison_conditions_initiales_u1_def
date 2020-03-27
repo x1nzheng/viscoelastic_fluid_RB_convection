@@ -1,0 +1,30 @@
+reset
+
+
+set border linecolor rgbcolor "yellow"
+set key textcolor rgbcolor "yellow"
+set title "Test Plot" textcolor rgbcolor "yellow"
+set obj 1 rectangle behind from screen 0,0 to screen 1,1
+set obj 1 fillstyle solid 1.0 fillcolor rgbcolor "black"
+
+
+set xlabel "u1"
+set ylabel "x2"
+
+set title 'u1  sensibilité aux conditions initiales œ__ différence'
+  
+  plot 'profil_U_CL_Newtonien_et_nulles' u  (($2)-($11)):($1)  w l   lt 1 lc rgb "#10bb70"  title 'u1_CI_Newtonien - u1_CI_nulles (N1/3  ,j)'
+replot 'profil_U_CL_Newtonien_et_nulles' u  (($3)-($12)):($1)  w l   lt 1 lc rgb "#0000FF"  title 'u1_CI_Newtonien - u1_CI_nulles (N1/2  ,j)'
+replot 'profil_U_CL_Newtonien_et_nulles' u  (($4)-($13)):($1)  w l   lt 1 lc rgb "#A52A2A"  title 'u1_CI_Newtonien - u1_CI_nulles (N1/2+1,j)' 
+replot 'profil_U_CL_Newtonien_et_nulles' u  (($5)-($14)):($1)  w l   lt 1 lc rgb "#BA55D3"  title 'u1_CI_Newtonien - u1_CI_nulles (N1/3+2,j)'
+replot 'profil_U_CL_Newtonien_et_nulles' u  (($6)-($15)):($1)  w l   lt 1 lc rgb "#FF0000"  title 'u1_CI_Newtonien - u1_CI_nulles (N1/3*2,j)'
+ 
+
+
+
+
+
+
+
+
+ 

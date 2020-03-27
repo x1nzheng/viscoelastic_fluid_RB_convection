@@ -1,0 +1,6 @@
+set key on inside r b
+set size ratio 1.
+plot 'Ghia_Re_100_u'
+replot 'prof_med_u1' u 1:2 w l 
+replot 'ku_Re_100_u'
+

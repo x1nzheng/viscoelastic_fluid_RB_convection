@@ -1,0 +1,34 @@
+# set multiplot layout 1,2 rowsfirst
+set datafile missing '?'
+
+set pm3d map 
+set contour base
+set cntrparam levels 900 #10
+set surface
+
+set style increment user
+do for [i=1:810] {
+set style line i lc rgb "black" lw .8  
+}
+ 
+set cntrparam bspline
+#unset interpolate 0,0 
+
+
+#set key on outside  t #rm 
+unset key  
+#unset colorbox
+set colorbox
+#unset contour
+#unset surface 	
+set palette rgbformulae 33,13,10
+ 
+#set size ratio 1.
+
+#set xrange [3:5]
+
+set title 'P'
+set cntrparam levels 30
+splot "champ_P" using 1:2:3
+
+ 

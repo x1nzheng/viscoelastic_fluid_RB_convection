@@ -1,0 +1,44 @@
+!----------------------------------------
+Dimensions domaine et Maillage 
+N1      8
+N2	    8
+N3      8
+	
+L1	    1.
+L2      1.
+L3  	1.
+
+!----------------------------------------
+Qlqs paramétres pour l'études de l'erreur
+
+Nbr_iteration_en_espace	1
+Nbr_iteration_en_temps	1
+pas_temps_choisi	    500
+print_erreur_temps	    1
+sonde           	    1
+dt                      0.0005
+
+! exp treatment for tau
+Re_zero                 10
+
+!----------------------------------------
+Nombres adimensionnels 
+
+Prandtl 	7.
+Reynolds	50.
+Grashof 	1e+2
+Rayleigh	2000
+Peclet		Prandtl * Reynolds	
+Beta            .2
+Weissenberg    	 0.1
+epsilon_PPT     .1
+xi_PTT          0.1
+alpha_Giesekus  .5
+
+!-----------------------------------------
+Condition de Courant–Friedrichs–Lewy
+ 
+CFL	0.08
+pas_temps_adptatif	0	 
+pas_write0		    20
+Total_step          500000

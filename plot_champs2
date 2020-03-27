@@ -1,0 +1,45 @@
+set multiplot layout 3,2 rowsfirst
+
+set pm3d map 
+set contour base
+set cntrparam levels 30 #10
+set surface
+
+set style increment user
+do for [i=1:50] {
+set style line i lc rgb "black" lw .8  
+}
+ 
+set cntrparam bspline
+ 
+#set key on outside  t #rm 
+unset key  
+#unset colorbox
+set colorbox
+#unset contour
+#unset surface 	
+set palette rgbformulae 33,13,10
+
+set title 'u_1'
+splot "champs_UT" using 1:2:3  lc 'black'
+
+set title 'u_2'
+splot "champs_UT" using 1:2:4
+
+set title '\tau_11'
+splot "champs_UT" using 1:2:5
+
+set title '\tau_12'
+splot "champs_UT" using 1:2:6
+
+set title '\tau_22'
+splot "champs_UT" using 1:2:7
+
+set title 'p'
+set cntrparam levels 30
+splot "champ_P" using 1:2:3
+
+
+
+ 
+

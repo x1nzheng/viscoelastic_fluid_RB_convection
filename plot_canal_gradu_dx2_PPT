@@ -1,0 +1,33 @@
+set size ratio 1.
+set pm3d map 
+set contour base
+set cntrparam levels auto 200
+set surface
+
+set style increment user
+do for [i=1:500] {
+set style line i lc rgb "black" lw .8  
+}
+ 
+set cntrparam bspline
+ 
+#set key on outside  t #rm 
+unset key  
+#unset colorbox
+set colorbox
+#unset contour
+#unset surface 	
+set palette rgbformulae 33,13,10
+
+
+#set xrange [0.5:1]
+#set yrange [0.5:1]
+
+#set cntrparam levels discrete 1.,2.,3.,4.,5.,6.,7.,8.,9.,10.,11.,12. 
+ 
+set xlabel "x3"
+set ylabel "x2"
+set title 'u_1(x1~0.5,x2,x3)'
+splot "champs_gradu1_dx2_PTT" using 1:2:7
+
+ 

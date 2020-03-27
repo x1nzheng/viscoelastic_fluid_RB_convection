@@ -1,0 +1,22 @@
+set terminal postscript eps size 108,16 enhanced font "Arial-Bold,100"
+set output 'vector.eps'
+
+unset key
+set tics
+set colorbox
+set border 0
+set xtics 2
+#set xlabel 'x'
+#set ylabel 'y'
+
+
+
+#set cbrange [0:40]
+
+set nolabel
+set style line 4 lt 2 lc rgb "green" lw 2
+ 
+set size ratio 1 
+ 
+set title 'vortic'
+splot "champs_vortic" using 1:2:3  lc 'black'

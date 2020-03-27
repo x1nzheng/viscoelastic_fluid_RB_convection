@@ -1,0 +1,10 @@
+mBase.o : mBase.f90 definitions.h 
+mVitesse.o : mVitesse.f90 definitions.h mOutils.o mBase.o 
+mOutils.o : mOutils.f90 definitions.h mBase.o 
+mPression.o : mPression.f90 definitions.h mVitesse.o mBase.o 
+mSolver.o : mSolver.f90 definitions.h mVitesse.o mPression.o mBase.o 
+mTimestep.o : mTimestep.f90 definitions.h mViscoelastic_models.o mHyperbolic_part.o mChampsprof.o mOutils.o mSolver.o mVitesse.o mPression.o mBase.o 
+mChampsprof.o : mChampsprof.f90 definitions.h mPression.o mBase.o 
+mPoste_traitement.o : mPoste_traitement.f90 definitions.h mSolver.o mChampsprof.o mVitesse.o mBase.o 
+mHyperbolic_part.o : mHyperbolic_part.f90 definitions.h mOutils.o mChampsprof.o mBase.o 
+mViscoelastic_models.o : mViscoelastic_models.f90 definitions.h mVitesse.o mBase.o 

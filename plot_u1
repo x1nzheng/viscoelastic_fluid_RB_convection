@@ -1,0 +1,37 @@
+set datafile missing '?'
+ 
+#set view map #Not sure about this...depends on the view you want
+ 
+ 
+
+
+set pm3d map 
+set contour base
+set cntrparam levels 50 #10
+set surface
+
+set style increment user
+do for [i=1:51] {
+set style line i lc rgb "black" lw .8  
+}
+
+ 
+ 
+ 
+
+set cntrparam bspline
+#unset interpolate 0,0 
+
+
+#set key on outside  t #rm 
+unset key  
+#unset colorbox
+set colorbox
+#unset contour
+#unset surface 	
+set palette rgbformulae 33,13,10
+ 
+set size ratio 1 
+ 
+set title 'u_1'
+splot "champs_UT" using 1:2:3  lc 'black'

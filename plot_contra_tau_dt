@@ -1,0 +1,9 @@
+ 
+ 
+
+set title 'UPWIND : 200x128,   We= 3.   \beta= .1,  t = 200 dt1 = 400 dt2 = 400 dt3 '
+  plot 'prof_contra_x1_200x128_dt1'  u 1:6 w l title 'dt1 =  1.5384e-04'
+replot 'prof_contra_x1_200x128_dt2'  u 1:6 w l title 'dt2 =  dt1 /2 '
+replot 'prof_contra_x1_200x128_dt3'  u 1:6 w l title 'dt3 =  dt2 /2 '
+set xlabel "x1"
+set ylabel "tau_22"

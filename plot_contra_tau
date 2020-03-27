@@ -1,0 +1,90 @@
+set multiplot layout 2,6 rowsfirst
+unset key 
+set grid 
+
+
+set xlabel "x1"
+set ylabel "u1"
+set title 'u1 (x1, x2=0.375)'
+plot 'prof_contra_x1'  u 1:2 w lp  	    
+
+set xlabel "x1"
+set ylabel "u2" 
+set title 'u2 (x1, x2=0.375)'
+plot 'prof_contra_x1'  u 1:3 w lp  
+
+ 
+set xlabel "x1"
+set ylabel "t_11"
+set title 't11 (x1, x2=0.375)'
+plot 'prof_contra_x1'  u 1:4 w lp 
+ 	       
+
+set xlabel "x1"
+set ylabel "t_12" 
+set title 't12 (x1, x2=0.375)'
+plot 'prof_contra_x1'  u 1:5 w lp  
+
+
+set xlabel "x1"
+set ylabel "t_22"
+set title 't22 (x1, x2=0.375)'
+plot 'prof_contra_x1'  u 1:6 w lp   
+
+set xlabel "x1"
+set ylabel "P"
+set title 'P (x1, x2=0.375)'
+plot 'prof_contra_x1'  u 1:7 w lp   
+
+set nogrid
+
+set xlabel "u1"
+set ylabel "x2"
+set title 'u1 (x1=contraction, x2)'
+plot 'prof_contra_x2'  u 2:1 w lp  	    
+
+set xlabel "u2"
+set ylabel "x2" 
+set title 'u2 (x1=contraction, x2)'
+plot 'prof_contra_x2'  u 3:1 w lp  
+
+
+
+
+
+set xlabel "t11"
+set ylabel "x2" 
+set title 't11 (x1=contraction, x2)'
+plot 'prof_contra_x2'  u 4:1 w lp, 0.375  linetype 3, 0.625  linetype 3
+
+
+
+set xlabel "t12"
+set ylabel "x2" 
+set title 't12 (x1=contraction, x2)'
+plot 'prof_contra_x2'  u 5:1 w lp, 0.375  linetype 3, 0.625  linetype 3
+
+
+set xlabel "t22"
+set ylabel "x2" 
+set title 't22 (x1=contraction, x2)'
+plot 'prof_contra_x2'  u 6:1 w lp, 0.375  linetype 3, 0.625  linetype 3
+
+
+
+set xlabel "P"
+set ylabel "x2" 
+set title 'P (x1=contraction, x2)'
+plot 'prof_contra_x2'  u 7:1 w lp #, 0.375 linetype 3, 0.625  linetype 3
+
+
+
+
+ 
+
+
+
+pause 1.
+reread 
+
+

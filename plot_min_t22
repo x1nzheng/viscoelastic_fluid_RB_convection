@@ -1,0 +1,11 @@
+set border linecolor rgbcolor "yellow"
+set key textcolor rgbcolor "yellow"
+set title "Test Plot" textcolor rgbcolor "yellow"
+set obj 1 rectangle behind from screen 0,0 to screen 1,1
+set obj 1 fillstyle solid 1.0 fillcolor rgbcolor "black"
+ 
+set title 'We= .6      \beta= .5       Maillage 200x64'
+plot 'min_t11_t22' u 2:6 w l title 'CFL .1'
+replot -0.9 w p title '1/Ma^2'
+set xlabel "t"
+set ylabel "min tau_22"

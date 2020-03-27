@@ -1,0 +1,7 @@
+paroi	type_u1	val_u1	q_u1		type_u2	val_u2	q_u2		type_T	val_T	flux_T		type_P	val_P	q_P		type_u3 val_u3	q_3
+bas	    1	0.	0.		            1	0.	0.		            1	1.	0.		            2	0.	0.		        1	0.	0.
+droite	1	0.	0.		            1	0.	0.		            2	0.	0.		            2	0.	0.		        1	0.	0.
+haut	1	0.	0.		            1	0.	0.		            1	0.	0.		            2	0.	0.		        1	0.	0.
+gauche	1	0.	0.		            1	0.	0.		            2	0.	0.		            2	0.	0.		        1	0.	0.
+avant 	1	0.	0.		            1	0.	0.		            2	0.	0.		            2	0.	0.		        1	0.	0.
+arriere	1	0.	0.		            1	0.	0.		            2	0.	0.		            2	0.	0.		        1	0.	0.

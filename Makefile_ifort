@@ -1,0 +1,33 @@
+.SUFFIXES:
+.SUFFIXES:.o .f90 .f .mod
+#
+SHELL=/bin/sh
+
+F90      = ifort -convert big_endian
+F90FLAGS = -fp-model precise -O2 -fpp
+# F90FLAGS = -fp-model precise -g -fpp -fpe0 -C -warn nounused -traceback -check nopower -check overflow
+F90LINK  = -L. -msse3 -lpthread -lnspcg -L/home/rknikker/src/PI2P/LIB
+
+SOURCES = mBase.f90      \
+	  mVitesse.f90   \
+	  mPression.f90  \
+	  mSolver.f90    \
+	  mTimestep.f90  \
+
+
+CODE_09_E1_BDF2_ABCN_RK3: $(SOURCES:.f90=.o) CODE_09_E1_BDF2_ABCN_RK3.f90
+	$(F90) $(SOURCES:.f90=.o) CODE_09_E1_BDF2_ABCN_RK3.f90 $(F90LINK) -o CODE_09_E1_BDF2_ABCN_RK3.out
+	./CODE_09_E1_BDF2_ABCN_RK3.out
+	more table_erreur_temps
+
+
+.f90.o :
+	$(F90) $(F90FLAGS) -c $*.f90 -o $*.o
+
+clean :
+	\rm -f *.il *.mod *.o *.out *~ 
+
+dep .depend:
+	makedepf90 $(SOURCES) > .depend
+#
+include .depend

@@ -1,0 +1,73 @@
+set multiplot layout 3,3 rowsfirst
+
+set size ratio 1.
+set pm3d map 
+set contour base
+set cntrparam levels auto #10
+set surface
+
+set style increment user
+do for [i=1:500] {
+set style line i lc rgb "black" lw .8  
+}
+ 
+set cntrparam bspline
+ 
+#set key on outside  t #rm 
+unset key  
+#unset colorbox
+set colorbox
+#unset contour
+#unset surface 	
+set palette rgbformulae 33,13,10
+
+set xlabel "x3"
+set ylabel "x2"
+set title 'u_1(x1~0.25,x2,x3)'
+splot "champs_UT_x2x3_1_4" using 1:2:3  
+
+set xlabel "x3"
+set ylabel "x2"
+set title 'u_1(x1~0.5,x2,x3)'
+splot "champs_UT_x2x3_1_2" using 1:2:3  
+
+set xlabel "x3"
+set ylabel "x2"
+set title 'u_1(x1~0.75,x2,x3)'
+splot "champs_UT_x2x3_3_4" using 1:2:3  
+
+
+
+
+set xlabel "x3"
+set ylabel "x2"
+set title 'u_2(x1~0.25,x2,x3)'
+splot "champs_UT_x2x3_1_4" using 1:2:4  
+
+set xlabel "x3"
+set ylabel "x2"
+set title 'u_2(x1~0.5,x2,x3)'
+splot "champs_UT_x2x3_1_2" using 1:2:4  
+
+set xlabel "x3"
+set ylabel "x2"
+set title 'u_2(x1~0.75,x2,x3)'
+splot "champs_UT_x2x3_3_4" using 1:2:4  
+
+
+
+
+set xlabel "x3"
+set ylabel "x2"
+set title 'u_3(x1~0.25,x2,x3)'
+splot "champs_UT_x2x3_1_4" using 1:2:5  
+
+set xlabel "x3"
+set ylabel "x2"
+set title 'u_3(x1~0.5,x2,x3)'
+splot "champs_UT_x2x3_1_2" using 1:2:5  
+
+set xlabel "x3"
+set ylabel "x2"
+set title 'u_3(x1~0.75,x2,x3)'
+splot "champs_UT_x2x3_3_4" using 1:2:5  

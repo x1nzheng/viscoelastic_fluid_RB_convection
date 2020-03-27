@@ -1,0 +1,15 @@
+set border linecolor rgbcolor "yellow"
+set key textcolor rgbcolor "yellow"
+set title "Test Plot" textcolor rgbcolor "yellow"
+set obj 1 rectangle behind from screen 0,0 to screen 1,1
+set obj 1 fillstyle solid 1.0 fillcolor rgbcolor "black"
+ 
+
+
+set xlabel 'it'
+set ylabel 'U=1 - dP/dx'
+
+set title 'recherche dpdx1 pour U=1'
+
+plot 'evolution_dpdx_u_moy' u 2:5 w l
+replot 'evolution_dpdx_u_moy' u 2:3 w l 

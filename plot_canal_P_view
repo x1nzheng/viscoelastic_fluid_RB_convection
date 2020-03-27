@@ -1,0 +1,33 @@
+reset
+
+set border linecolor rgbcolor "yellow"
+set key textcolor rgbcolor "yellow"
+set title "Test Plot" textcolor rgbcolor "yellow"
+set obj 1 rectangle behind from screen 0,0 to screen 1,1
+set obj 1 fillstyle solid 1.0 fillcolor rgbcolor "black"
+
+
+
+ set datafile missing '?' 
+
+ set pm3d # map 
+ set surface
+ 
+ 
+unset key  
+#set colorbox
+ 
+set palette rgbformulae 23,28,3
+ 
+set size ratio 1.0 
+
+set style fill transparent solid 0.65
+
+set title 'u3' 
+set xlabel "x_3" tc ls 2
+set ylabel "x_2	" tc ls 2
+set zlabel "u3" tc ls 2
+
+
+splot "champ_P_x2x3_1_2" using 1:2:3  with lines lc 'black' 
+#splot "champs_dpdx_plan_canal" using 1:2:3  with lines lc 'black' 

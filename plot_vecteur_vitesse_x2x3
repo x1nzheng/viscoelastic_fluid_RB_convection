@@ -1,0 +1,30 @@
+set border linecolor rgbcolor "yellow"
+set key textcolor rgbcolor "yellow"
+set title "Test Plot" textcolor rgbcolor "yellow"
+set obj 1 rectangle behind from screen 0,0 to screen 1,1
+set obj 1 fillstyle solid 1.0 fillcolor rgbcolor "black"
+
+
+
+
+
+
+set palette rgbformulae 33,13,10
+set palette rgbformulae 23,28,3
+
+set size ratio .5
+set xrange [0:1]
+set yrange [0:1]	
+set xlabel "x3"
+set ylabel "x2"
+set title '\vec{U}(u2,u3) en (x1~0.5,x2,x3)'
+
+
+ 
+scaling= 20.
+ss(x,y) = sqrt(x**2 + y**2)
+ 
+plot 'champs_UT_x2x3_1_2' using 1:2:($5*scaling):($4*scaling):(ss($5,$4)) title "" with vectors filled head size 0.01,10,50 lw 2 lc palette
+
+
+ 

@@ -1,0 +1,33 @@
+ reset
+
+set pm3d map 
+set contour base
+set cntrparam levels auto 100
+set surface
+
+set style increment user
+do for [i=1:500] {
+set style line i lc rgb "black" lw .8  
+}
+ 
+set cntrparam bspline
+ 
+#set key on outside  t #rm 
+unset key  
+#unset colorbox
+set colorbox
+#unset contour
+#unset surface 	
+set palette rgbformulae 33,13,10
+
+set xrange[0.5:1]
+set yrange[0.5:1]
+
+set size ratio 1.
+
+set xlabel "x2"
+set ylabel "x3"
+#set title 'P(x1~0.25,x2,x3)'
+splot "champs_UT_x2x3_1_4" using 1:2:12    #12 
+
+ 

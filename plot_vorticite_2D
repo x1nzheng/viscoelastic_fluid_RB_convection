@@ -1,0 +1,44 @@
+
+set contour base
+set cntrparam levels 100 #10
+
+#set cntrparam levels incr -0.6,0.001,0.6
+
+ 
+
+    
+
+
+ 
+
+set style increment user
+do for [i=1:551] {
+set style line i lc rgb "black" lw .8  
+}
+
+ set isosamples 50,50
+ 
+ 
+
+set cntrparam bspline
+#unset interpolate 0,0 
+
+
+#set key on outside  t #rm 
+unset key  
+#unset colorbox
+#set colorbox
+#unset contour
+unset surface 	
+set palette rgbformulae 33,13,10
+ 
+
+#set cntrparam levels discrete 0.49,-0.49
+
+#set isosamples 50, 50
+set title '\streamlines'
+splot "champs_vortic" using 1:2:3
+
+
+
+

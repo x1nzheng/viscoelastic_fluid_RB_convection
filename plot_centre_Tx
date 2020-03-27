@@ -1,0 +1,10 @@
+
+
+set terminal pngcairo size 640,480
+ set output "centre Tx.png" 
+set style data points 
+set auto x 
+set autoscale y 
+unset colorbox 
+plot 'champs_central_yline_uT' using ($1/2):7 with points notitle
+

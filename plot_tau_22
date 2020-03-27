@@ -1,0 +1,6 @@
+plot  'prof_med_u1' using 5:1  w l linetype 3
+
+ 
+
+pause .1
+reread  

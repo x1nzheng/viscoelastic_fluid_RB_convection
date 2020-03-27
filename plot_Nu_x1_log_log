@@ -1,0 +1,21 @@
+set border linecolor rgbcolor "yellow"
+set key textcolor rgbcolor "yellow"
+set title "Test Plot" textcolor rgbcolor "yellow"
+set xlabel "Test Plot" textcolor rgbcolor "yellow"
+set ylabel "Test Plot" textcolor rgbcolor "yellow"
+set obj 1 rectangle behind from screen 0,0 to screen 1,1
+set obj 1 fillstyle solid 1.0 fillcolor rgbcolor "black"
+ 
+
+set logscal 
+
+set xlabel 'x1^*'
+set ylabel 'Nu_local(x1^*)'
+
+set title 'Nu_local(x1^*)'
+
+#plot 'Nu_moy_x3_fonction_x1_paroi_bas' u (($1)/10.):2 w l  title 'Nu_x1'
+plot 'Nu_moy_x3_fonction_x1_paroi_bas_21_21_21_fait' u (($1)/10.):2 w l  title 'Nu_x1_21^3'
+replot 'Nu_moy_x3_fonction_x1_paroi_bas_41_41_41_fait' u (($1)/10.):2 w l  title 'Nu_x1_41^3'
+replot 'Nu_moy_x3_fonction_x1_paroi_bas_81_81_81_fait' u (($1)/10.):2 w l  title 'Nu_x1_81^3'
+replot 'Nu_moy_x3_fonction_x1_paroi_bas_161_161_161_fait' u (($1)/10.):2 w l  title 'Nu_x1_161^3'

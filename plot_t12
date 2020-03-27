@@ -1,0 +1,42 @@
+set border linecolor rgbcolor "yellow"
+set key textcolor rgbcolor "yellow"
+set title "Test Plot" textcolor rgbcolor "yellow"
+set obj 1 rectangle behind from screen 0,0 to screen 1,1
+set obj 1 fillstyle solid 1.0 fillcolor rgbcolor "black"
+
+
+
+set datafile missing '?' 
+
+set pm3d map 
+set contour base
+set cntrparam levels 50 #10
+set surface
+
+set style increment user
+do for [i=1:51] {
+set style line i lc rgb "black" lw .8  
+}
+
+ 
+ 
+ 
+
+set cntrparam bspline
+#unset interpolate 0,0 
+
+
+#set key on outside  t #rm 
+unset key  
+#unset colorbox
+set colorbox
+#unset contour
+#unset surface 	
+#set palette rgbformulae 33,13,10
+#set palette rgbformulae 33,13,10
+set palette rgbformulae 23,28, 3 
+
+#set size ratio 1.0 
+ 
+set title 't_12'
+splot "champs_UT" using 1:2:6  lc 'black'
